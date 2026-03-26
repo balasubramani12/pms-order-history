@@ -1,7 +1,10 @@
 let currentPage = 1;
 const recordsPerPage = 10;
 
-let filteredData = [...orders];
+
+let filteredData = orders.filter(
+  order => order.mobno === currentUser.mobno
+);
 
 // Set title
 document.addEventListener("DOMContentLoaded", () => {
