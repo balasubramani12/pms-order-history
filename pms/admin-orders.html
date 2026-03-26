@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Order History</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Quick inline styles for pagination buttons */
+    .pagination button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .pagination button {
+      margin: 0 5px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h2>🛠️ Admin Order Management</h2>
+
+<input type="text" id="search" placeholder="🔍 Search by ID / Name / Status / Location">
+
+<table>
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Name</th>
+      <th>Mobile</th>
+      <th>Pickup</th>
+      <th>Drop</th>
+      <th>Weight</th>
+      <th>Type</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody">
+    <!-- Data loads here -->
+  </tbody>
+</table>
+
+<!-- Pagination Controls -->
+<div class="pagination">
+  <button onclick="prevPage()" id="prevBtn">⬅ Prev</button>
+  <span id="pageInfo">Page 1 of 1</span>
+  <button onclick="nextPage()" id="nextBtn">Next ➡</button>
+</div>
+
+<!-- Popup Modal -->
+<div id="popup" class="modal" style="display:none;">
+  <div class="modal-content">
+    <p id="popupMessage"></p>
+    <button class="close-btn" onclick="closePopup()">OK</button>
+  </div>
+</div>
+
+<!-- Data & Script -->
+<script src="order_data.js"></script>
+<script src="admin_script.js"></script>
+
+</body>
+</html>
