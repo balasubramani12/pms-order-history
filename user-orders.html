@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order History</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h2>📦 Order History</h2>
+
+<input type="text" id="search" placeholder="Search by ID / Status / Location">
+
+<table>
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Name</th>
+      <th>Mobile</th>
+      <th>Pickup</th>
+      <th>Drop</th>
+      <th>Weight</th>
+      <th>Type</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody"></tbody>
+</table>
+
+<div class="pagination">
+  <button onclick="prevPage()">Prev</button>
+  <span id="pageInfo"></span>
+  <button onclick="nextPage()">Next</button>
+</div>
+
+<!-- Popup Modal -->
+<div id="popup" class="modal">
+  <div class="modal-content">
+    <p id="popupMessage">Request Sent</p>
+    <button class="close-btn" onclick="closePopup()">OK</button>
+  </div>
+</div>
+
+<script src="order_data.js"></script>
+<script src="user-oh.js"></script>
+
+</body>
+</html>
